@@ -10,7 +10,11 @@
       ansible.builtin.dnf:
         name: nginx
         state: installed
-
+    - name: Start nginx
+      ansible.builtin.systemd_service:
+        name: nginx
+        state: started
+        
 
 
 # source common.sh
