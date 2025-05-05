@@ -1,5 +1,5 @@
-- name: Frontend Setup 
+- name: Frontend Setup
   hosts: all
   become: true
   roles:
-    - "{{ component_name}}"
+    - "{{ component_name }}"
