@@ -1,6 +1,7 @@
 - name: Load Nodejs
   ansible.builtin.include_role:
     name: common
+    task_from: common\tasks
 
 - name: copy mognodb repo file
   ansible.builtin.copy:
