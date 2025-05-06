@@ -1,20 +1,26 @@
-- name: Disable nodejs and enable nodejs 20
-  ansible.builtin.shell: dnf module disable nodejs; dnf module enable nodejs:20
+- name: Disable Node.js default module
+  ansible.builtin.command: dnf module disable -y nodejs
+  args:
+    warn: false
 
-- name: Install Nodejs
+- name: Enable Node.js 20 module
+  ansible.builtin.command: dnf module enable -y nodejs:20
+  args:
+    warn: false
+
+- name: Install Node.js
   ansible.builtin.dnf:
     name: nodejs
     state: installed
 
-- name: include artifact_download 
-  ansible.builtin.include_tasks:
-    file: artifact_download.yml
+- name: Include artifact_download tasks
+  ansible.builtin.include_tasks: artifact_download.yml
 
-- name: install nodejs dependencies
-  ansible.builtin.shell: npm install
+- name: Install Node.js dependencies
+  ansible.builtin.command: npm install
   args:
     chdir: /app
+    warn: false
 
-- name: systemd_setup
-  ansible.builtin.include_tasks:
-    file: systemd_setup.yml
+- name: Include systemd_setup tasks
+  ansible.builtin.include_tasks: systemd_setup.yml
