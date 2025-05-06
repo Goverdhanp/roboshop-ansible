@@ -16,7 +16,7 @@
   ansible.builtin.command: npm install
   args:
     chdir: /app
-    warn: false
+
 
 - name: Include systemd_setup tasks
   ansible.builtin.include_tasks: systemd_setup.yml
