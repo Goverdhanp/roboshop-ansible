@@ -1,6 +1,7 @@
 - name: Load Nodejs
   ansible.builtin.include_role:
     name: common
+    task_from: nodejs.yml
 
 - name: copy mognodb repo file
   ansible.builtin.copy:
@@ -13,7 +14,7 @@
     state: installed
 
 - name: Load Master data
-  ansible.builtin.shell: mongosh --host {{ component_name }}-dev.gvndevops12.tech </app/db/master-data.js
+  ansible.builtin.shell: mongosh --host mongo-dev.gvndevops12.tech </app/db/master-data.js
 
 
   
