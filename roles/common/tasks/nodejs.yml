@@ -1,12 +1,8 @@
 - name: Disable Node.js default module
-  ansible.builtin.command: dnf module disable nodejs
-  args:
-    warn: false
+  ansible.builtin.command: dnf module disable -y nodejs
 
 - name: Enable Node.js 20 module
-  ansible.builtin.command: dnf module enable nodejs:20
-  args:
-    warn: false
+  ansible.builtin.command: dnf module enable -y nodejs:20
 
 - name: Install Node.js
   ansible.builtin.dnf:
