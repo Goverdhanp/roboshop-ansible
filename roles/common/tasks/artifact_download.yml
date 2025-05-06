@@ -1,14 +1,4 @@
 
-    
-#     print_head download application content
-#     curl -L -o /tmp/$component.zip https://roboshop-artifacts.s3.amazonaws.com/$component-v3.zip &>>$log_file
-#     exit_status_print $?
-#     cd /app 
-    
-#     print_head extract application content
-#     unzip /tmp/catalogue.zip &>>$log_file
-#     exit_status_print $?
-
 - name: Add applicatioin user
   ansible.builtin.user:
     name: roboshop
@@ -25,6 +15,6 @@
 
 - name: download and extract app content
   ansible.builtin.unarchive:
-    src: https://roboshop-artifacts.s3.amazonaws.com/$component-v3.zip
+    src: https://roboshop-artifacts.s3.amazonaws.com/$component_name-v3.zip
     dest: /app
     remote_src: yes
