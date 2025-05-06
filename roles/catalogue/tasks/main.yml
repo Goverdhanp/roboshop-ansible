@@ -6,7 +6,7 @@
 - name: copy mognodb repo file
   ansible.builtin.copy:
     src: mongo.repo
-    dest: etc/yum.repos.d/mongo.repo
+    dest: /etc/yum.repos.d/mongo.repo
 
 - name: Install mongoDB 
   ansible.builtin.dnf:
@@ -14,7 +14,7 @@
     state: installed
 
 - name: Load Master data
-  ansible.builtin.shell: mongosh --host mongo-dev.gvndevops12.tech </app/db/master-data.js
+  ansible.builtin.shell: mongosh --host {{ component_name }}-dev.gvndevops12.tech </app/db/master-data.js
 
 
   

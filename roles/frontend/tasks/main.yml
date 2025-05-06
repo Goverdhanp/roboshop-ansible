@@ -27,7 +27,7 @@
 
 - name: download and extract app content
   ansible.builtin.unarchive:
-    src: https://roboshop-artifacts.s3.amazonaws.com/frontend-v3.zip
+    src: https://roboshop-artifacts.s3.amazonaws.com/component_name-v3.zip
     dest: usr/share/nginx/html/
     remote_src: yes
 
