@@ -1,0 +1,15 @@
+# component = shipping
+# source common.sh
+# maven_app_setup
+
+# print_head install mysql clinet
+# dnf install mysql -y &>> $log_file
+
+# for file in schema app-user master-data; do
+# print_head load $file
+# mysql -h 172.31.14.173 -uroot -pRoboShop@1 < /app/db/$file.sql &>> $log_file
+
+# done
+
+- name: load maven app Setup
+  ansible.builtin.include_role: 
