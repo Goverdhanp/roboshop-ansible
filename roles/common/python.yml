@@ -1,0 +1,20 @@
+- name: Install python packages
+  ansible.builtin.dnf:
+    name: 
+      - python3
+      - gcc 
+      - python3-devel
+    state: installed
+  
+- name: include artifact_download
+  ansible.builtin.include_tasks:
+    tasks_file: artifact_download
+
+- name: Install python dependencies
+  ansible.builtin.shell: pip3 install -r requirements.txt
+  args: 
+    chdir: /app
+
+- name: systemd_setup
+  ansible.builtin.include_tasks:
+    file: systemd_setup
