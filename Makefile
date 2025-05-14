@@ -6,7 +6,11 @@ all:
 	
 	
 	ansible-playbook -i "frontend-dev.gvndevops12.tech," -e ansible_user=ec2-user -e ansible_password=DevOps321  -e "component_name=frontend" roboshop.yml -e env=$(env) 
+<<<<<<< HEAD
     ansible-playbook -i "redis-dev.gvndevops12.tech," -e ansible_user=ec2-user -e ansible_password=DevOps321  -e "component_name=redis" roboshop.yml -e env=$(env) 
+=======
+    ansible-playbook -i "redis-dev.gvndevops12.tech," -e ansible_user=ec2-user -e ansible_password=DevOps321  -e "component_name=" redis " roboshop.yml -e env=$(env) 
+>>>>>>> 0d0c326d2366b7d94b1192835c56ccd998112c05
     ansible-playbook -i "mysql-dev.gvndevops12.tech," -e ansible_user=ec2-user -e ansible_password=DevOps321  -e "component_name=mysql" roboshop.yml -e env=$(env) 
     ansible-playbook -i "user-dev.gvndevops12.tech," -e ansible_user=ec2-user -e ansible_password=DevOps321  -e "component_name=user" roboshop.yml -e env=$(env) 
     ansible-playbook -i "mogo-dev.gvndevops12.tech," -e ansible_user=ec2-user -e ansible_password=DevOps321  -e "component_name=mogo" roboshop.yml -e env=$(env) 
