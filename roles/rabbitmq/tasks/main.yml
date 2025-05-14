@@ -14,4 +14,4 @@
     state: started
 
 - name: add application roboshop user
-  ansible.builtin.shell: dd_user roboshop roboshop123 ; set_permissions -p / roboshop ".*" ".*" ".*"
+  ansible.builtin.shell: add_user roboshop roboshop123 ; set_permissions -p / roboshop ".*" ".*" ".*"
