@@ -8,7 +8,7 @@ all:
 	ansible-playbook -i "redis-dev.gvndevops12.tech," -e ansible_user=ec2-user -e ansible_password=DevOps321 -e "component_name=redis" roboshop.yml -e env=$(ENV)
 	ansible-playbook -i "mysql-dev.gvndevops12.tech," -e ansible_user=ec2-user -e ansible_password=DevOps321 -e "component_name=mysql" roboshop.yml -e env=$(ENV)
 	ansible-playbook -i "user-dev.gvndevops12.tech," -e ansible_user=ec2-user -e ansible_password=DevOps321 -e "component_name=user" roboshop.yml -e env=$(ENV)
-	ansible-playbook -i "mogo-dev.gvndevops12.tech," -e ansible_user=ec2-user -e ansible_password=DevOps321 -e "component_name=mogo" roboshop.yml -e env=$(ENV)
+	ansible-playbook -i "mogodb-dev.gvndevops12.tech," -e ansible_user=ec2-user -e ansible_password=DevOps321 -e "component_name=mogo" roboshop.yml -e env=$(ENV)
 	ansible-playbook -i "rabbitmq-dev.gvndevops12.tech," -e ansible_user=ec2-user -e ansible_password=DevOps321 -e "component_name=rabbitmq" roboshop.yml -e env=$(ENV)
 	ansible-playbook -i "shipping-dev.gvndevops12.tech," -e ansible_user=ec2-user -e ansible_password=DevOps321 -e "component_name=shipping" roboshop.yml -e env=$(ENV)
 	ansible-playbook -i "payment-dev.gvndevops12.tech," -e ansible_user=ec2-user -e ansible_password=DevOps321 -e "component_name=payment" roboshop.yml -e env=$(ENV)
