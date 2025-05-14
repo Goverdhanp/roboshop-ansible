@@ -11,3 +11,20 @@
 #     systemd_setup
 # }
 
+
+- name: Install maven
+  ansible.builtin.dnf:
+    name: maven
+    state: installed
+
+- name: Include artifact_download tasks
+  ansible.builtin.include_tasks: artifact_download.yml
+
+- name: Install Maven dependencies
+  ansible.builtin.command:  mvn clean package ; mv target/{{ component_name }}-1.0.jar {{ component_name }}.jar 
+  args:
+    chdir: /app
+
+
+- name: Include systemd_setup tasks
+  ansible.builtin.include_tasks: systemd_setup.yml

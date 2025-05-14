@@ -1,15 +1,20 @@
-# component = shipping
-# source common.sh
-# maven_app_setup
+- name: Load Nodejs
+  ansible.builtin.include_role:
+    name: common
+    tasks_from: maven
 
-# print_head install mysql clinet
-# dnf install mysql -y &>> $log_file
+- name: Install Mysql clinet
+  ansible.builtin.dnf:
+    name: mysql
+    state: installed
 
-# for file in schema app-user master-data; do
-# print_head load $file
-# mysql -h 172.31.14.173 -uroot -pRoboShop@1 < /app/db/$file.sql &>> $log_file
+- name: Load schema 
+  ansible.builtin.shell: mysql -h mysql-dev.mysql-dev.gvndevops12.tech -uroot -pRoboshop@1 < /app/db/schema.sql
 
-# done
 
-- name: load maven app Setup
-  ansible.builtin.include_role: 
+- name: Load user Creatioin 
+  ansible.builtin.shell: mysql -h mysql-dev.mysql-dev.gvndevops12.tech -uroot -pRoboshop@1 < /app/db/app-user.sql
+
+
+- name: Load master Data 
+  ansible.builtin.shell: mysql -h mysql-dev.mysql-dev.gvndevops12.tech -uroot -pRoboshop@1 < /app/db/master-data.sql

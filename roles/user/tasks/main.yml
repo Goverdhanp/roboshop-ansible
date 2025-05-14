@@ -1,3 +1,14 @@
+# dnf install maven -y &>> $log_file
+    
+#     artifact_download
+#     cd /app 
+
+#     print_head install maven dependencies
+#     mvn clean package  &>> $log_file
+#     mv target/$component-1.0.jar $component.jar &>> $log_file
+
+#     systemd_setup
+
 - name: Load nodejs
   ansible.builtin.include_role:
     name: common
