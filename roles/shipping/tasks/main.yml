@@ -9,12 +9,12 @@
     state: installed
 
 - name: Load schema 
-  ansible.builtin.shell: mysql -h mysql-dev.mysql-dev.gvndevops12.tech -uroot -pRoboShop@1 < /app/db/schema.sql
+  ansible.builtin.shell: mysql -h mysql-dev.gvndevops12.tech -uroot -pRoboShop@1 < /app/db/schema.sql
 
 
 - name: Load user Creatioin 
-  ansible.builtin.shell: mysql -h mysql-dev.mysql-dev.gvndevops12.tech -pRoboShop@1 < /app/db/app-user.sql 
+  ansible.builtin.shell: mysql -h mysql-dev.gvndevops12.tech -pRoboShop@1 < /app/db/app-user.sql 
 
 
 - name: Load master Data 
-  ansible.builtin.shell: mysql -h mysql-dev.mysql-dev.gvndevops12.tech -uroot -pRoboShop@1 < /app/db/master-data.sql
+  ansible.builtin.shell: mysql -h mysql-dev.gvndevops12.tech -uroot -pRoboShop@1 < /app/db/master-data.sql
