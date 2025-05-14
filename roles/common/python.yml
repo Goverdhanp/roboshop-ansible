@@ -7,8 +7,7 @@
     state: installed
   
 - name: include artifact_download
-  ansible.builtin.include_tasks:
-    tasks_file: artifact_download
+  ansible.builtin.include_tasks: artifact_download.yml
 
 - name: Install python dependencies
   ansible.builtin.shell: pip3 install -r requirements.txt
@@ -16,5 +15,4 @@
     chdir: /app
 
 - name: systemd_setup
-  ansible.builtin.include_tasks:
-    file: systemd_setup
+  ansible.builtin.include_tasks: systemd_setup.yml
